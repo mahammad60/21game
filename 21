@@ -1,0 +1,48 @@
+def player1(current_sum1):
+ 
+ 
+    print("number 21 game ")
+    number =  int(input("start with number 1 "))
+    current_sum1 += number
+    return current_sum1
+
+def player2(current_sum):
+     number = int(input("your turn three numbers up "))
+     current_sum += number
+     if player1 == 21:
+      print("you lost")
+
+     return current_sum
+
+ 
+
+
+
+
+def game():
+  current_sum = 0
+  current_sum1 = 0
+  turn = 1
+  while current_sum < 21 and current_sum1 < 21:
+
+    if turn == 1:
+            current_sum1 = player1(current_sum1)
+            turn = 2  # Switch to Player 2's turn
+    else:
+            current_sum = player2(current_sum)
+            turn = 1  # Switch to Player 1's
+
+
+
+    if current_sum == 21:
+        print("player1 wins!")
+        break
+    
+    
+    elif current_sum1 == 21:
+        print("player2 wins you!")
+        break
+
+
+
+game()
